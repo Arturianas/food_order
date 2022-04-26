@@ -1,0 +1,796 @@
+ 
+
+
+
+ @keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ } 
+ 
+ 
+ 
+ @keyframes fadeOutRight {
+    0% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+    100% {
+       opacity: 0;
+       transform: translateX(20px);
+    }
+ } 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ h1 {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-top: 70px; */
+
+    padding: 10px 16px;
+    
+    color: #f1f1f1;
+    z-index: 1;
+    /* transition: 0.6s; */
+
+   
+}
+
+
+/* Page content */
+.content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the header with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+
+    
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .foods {
+    padding-top: 40px;
+  }
+
+.buttons a {
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    text-decoration: none;
+    color: goldenrod;
+    padding: 5px;
+    margin: 10px
+
+    
+}
+
+button {
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+.menuBtn {
+    border: 2px solid #fa7921;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fa7921;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+
+
+
+.active {
+    background-color: #fa7921;
+    color: #ffffff;
+  }
+
+
+/* Button */
+
+
+
+/* to hide elements when needed*/
+  .hide {
+    display: none;
+  }
+
+
+
+/* food-wrapper add position:fixed so the scroll var would work when cart is open */
+
+.fixed {
+    
+}
+
+
+
+
+
+
+/* Food Card design*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* food wrapper */
+.food-wrapper{
+    min-height: 100vh;
+    flex-direction: column;
+    background: #f9f9f9;
+    padding: 40px;
+    
+    
+    
+}
+
+
+.flex {
+    
+}
+
+body {
+    overflow-y: auto;
+}
+
+
+.food-wrapper h1{
+    text-transform: uppercase;
+    margin: 1rem 0 2rem 0;
+    letter-spacing: 2px;
+    position: relative;
+}
+.food-wrapper h1::after{
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    content: "";
+    height: 4px;
+    width: 120px;
+    background: #fa7921;
+}
+.foods{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    column-gap: 3rem;
+    
+}
+.food{
+    background: #fff;
+    box-shadow: 0 0 17px 0 rgba(212, 212, 212, 0.64);
+    margin: 2rem 0;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+.food-img img{
+    border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -ms-border-radius: 7px 7px 0 0;
+    -o-border-radius: 7px 7px 0 0;
+}
+.food-img{
+    position: relative;
+}
+.food-img span{
+    position: absolute;
+    font-size: 2rem;
+    color: #fff;
+    top: 1rem;
+    right: 1.8rem;
+}
+.food-rate{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    background: #fe9920;
+    padding: 0.4rem 1.5rem;
+    font-size: 1.4rem;
+}
+.food-content{
+    padding: 1.6rem;
+}
+.food-content p{
+    padding: 1.2rem 0;
+}
+.food-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.food-info div{
+    display: flex;
+    align-items: center;
+    color: #fa7921;
+}
+.food-info div p{
+    padding-left: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.food-info span{
+    background: #fa7921;
+    color: #fff;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    padding: 0.1rem 0.8rem;
+    font-weight: 600;
+}
+.food-price-calc{
+    padding: 1.2rem 0 0.6rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.food-price-calc h2{
+    color: #fa7921;
+    font-size: 2rem;
+}
+.food-quantity{
+    display: flex;
+    align-items: center;
+}
+.food-quantity div{
+    width: 45px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.35rem;
+}
+.order-val{
+    font-weight: 600;
+    background: #f9f9f9;
+}
+.order-dec,
+.order-inc{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.45);
+}
+.order-dec .fas,
+.order-inc .fas{
+    color: #fff;
+}
+.order-dec:hover,
+.order-inc:hover{
+    background: #fa7921;
+}
+
+/* End of Food card Design */
+
+
+
+
+/* CART design */
+
+.flex {
+    display: flex;
+}
+
+    /* cartBackground contains black div and cartDiv */
+.cartBackground {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    
+    
+    
+  z-index: 9999;
+}
+
+
+.black {
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.cartDiv {
+    width: 700px;
+    background: #f3f3f7;
+
+    
+    overflow-y: scroll;
+
+    animation: fadeInRight 0.4s;
+    
+    
+}
+
+
+.subtotal {
+    margin-bottom: 15px;
+}
+
+.cart {
+  
+ 
+   
+    
+}
+
+
+
+/*
+.closeBtn {
+    margin-right: 50px;
+    background: none;
+	border: none;
+	color: rgb(255, 255, 255);
+    font-size: 44px;
+    font-weight: 500;
+	cursor: pointer;
+	
+}
+
+.closeBtn:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.5s ease-in-out 0s;
+  }
+  */
+
+
+
+    /* hide */
+    .nerodyti {
+        display: none;
+        
+    }
+
+    .closeOrderBtn {
+        background: none;
+        border: none;
+        font-size: 44px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #fff;
+        text-align: end;
+        margin-right: -50px;
+        
+        transition: transform .3s; /* Animation */
+        
+    }
+
+    /* Cart Close Btn */
+  .closeBtn {
+    background: none;
+	border: none;
+    font-size: 44px;
+    font-weight: 500;
+	cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: calc(50% - 12px);
+    margin-left: -50px;
+    transition: transform .3s; /* Animation */
+  }
+
+
+  .closeBtn:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: transform 500ms ease 0s;
+  }
+
+/* food-wrapper is main website div when cart is open we need to change it's position: fixed   so it wouldn't scroll */
+.food-wrapper {
+    
+}
+
+
+/* Cart Elements */
+
+
+
+
+.Cartt {
+    margin-left: 50px;
+    background: none;
+    border: none;
+    background-color: #fa7921;
+
+    height: 40px;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 9999px;
+}
+
+
+.cart-item {
+    position: relative;
+    padding: 12px 16px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    
+}
+
+
+.item-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.cartFlex {
+    display: flex;
+    
+    position: relative; 
+}
+
+
+.priceFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    
+}
+
+.units {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(232, 232, 232);
+    border-radius: 9999px;
+    width: 20%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.unit-price {
+    font-weight: 600;
+}
+
+
+.btn {
+    cursor: pointer;
+}
+
+
+.hr {
+    margin-top: 10px;
+    
+}
+
+
+.item-info-text {
+    margin-left: 20px;
+}
+
+
+.remove-btn {
+    position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  border-radius: 50px;
+
+
+  
+    background: none;
+    border: none;
+   
+
+    height: 40px;
+    padding: 8px 30px;
+    font-size: 16px;
+    line-height: 24px;
+
+   
+    color: rgb(141, 141, 141);
+    border-radius: 9999px;
+    
+
+}
+
+
+
+/* order button */
+.orderBtn {
+    background: none;
+    border: none;
+    background-color: #fa7921;
+
+    height: 40px;
+    padding: 8px 30px;
+    font-size: 16px;
+    line-height: 24px;
+
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 9999px;
+    
+}
+
+
+
+/* Cart subtotal info and order button div */
+.cartSubDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(6 5 50 / 10%) 0px -2px 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    
+}
+
+/* cart column flex */
+
+.cartColFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    height: 100%;
+}
+
+/* END of Cart Elements */
+
+
+/* heart for favorites */
+
+.favorite {
+    color: red;
+}
+
+.fa-heart {
+    cursor: pointer;
+}
+
+
+
+
+
+/* Scroll Bar Design */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(185, 185, 185);
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+/* Order Modal */
+  
+.orderModal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36, 36, 36, 0.5);
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.orderInfo {
+    width: 400px;
+    height:400px;
+    background-color: #ffffff;
+    
+    border-radius: 25px;
+    display: flex;
+    
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.nerodytiModal {
+    display: none;
+}
+
+
+
+
+/* Rodyti Confirm order zinute */
+
+.nerodytiForm {
+    display: none;
+}
+
+.nerodytiConfirm {
+    display: none;
+}
+
+
+/* Address input field design */
+
+#address {
+    
+    height: 40px;
+    width: 70%;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(92, 99, 112, 0.32);
+    padding: 0px 15px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 40px;
+    
+    
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    outline: none;
+   
+    transition: border-color 0.2s ease 0s;
+    font-variant-ligatures: no-common-ligatures;
+
+    margin-bottom: 25px;
+}
+
+
+#shipping {
+    height: 40px;
+    width: 70%;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(92, 99, 112, 0.32);
+    padding: 0px 15px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 40px;
+    
+    
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    outline: none;
+   
+    transition: border-color 0.2s ease 0s;
+    font-variant-ligatures: no-common-ligatures;
+
+    margin-bottom: 25px;
+}
+
+
+
+/* submit button */
+
+.submit {
+    height: 48px;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+
+
+br {
+    margin-bottom: 10px;
+}
+
+
+.confirmImg {
+    width: 50%;
+    height: auto;
+    margin: 10px auto;
+    
+}
+
+
+
+
+/* Mobile design */
+
+@media only screen and (max-width: 1000px) {
+    .Cartt {
+        margin-left: 0;
+    }
+
+    .black {
+        width: 30%;
+    }
+
+    .closeOrderBtn {
+        margin: 10px;
+        color: #555;
+    }
+  }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    
+
+
+    <title>Food Order App</title>
+</head>
+<body>
+
+
+    <div class="flex">
+        <div class = "food-wrapper center">
+            <h1>Our menu</h1>
+    
+            <div class="buttons" id="myHeader">
+                <div id="myBtnContainer">
+                    <div id="buttons">
+                        <button class="button-value menuBtn" onclick="filterProduct('all')">All</button>
+                        <button class="button-value menuBtn" onclick="filterProduct('Breakfast')">Breakfast</button>
+                        <button class="button-value menuBtn" onclick="filterProduct('Lunch')">Lunch</button>
+                        <button class="button-value menuBtn" onclick="filterProduct('Dinner')">Dinner</button>
+                        
+                        
+                        <button class="Cartt" onclick="openCart('open')">Cart: 0</button>
+                      </div>
+                  </div>
+            </div>
+    
+            <div class = "foods">
+                <!-- single food Dynamic content-->
+                
+                <!-- end of single food -->
+            </div>
+    
+            
+        </div>
+        
+        <div class="nerodyti cartBackground">
+            <div class="black">
+                <!--Just black transparent background-->
+                
+            </div>
+            <div class="cartDiv">
+                <button class="closeBtn" onclick="openCart('close')"><i class="fas fa-times"></i></button>
+                <div class="cartColFlex">
+                    <div class="cart">
+                        <!-- Cart items-->
+                    </div>
+                    <div class="cartSubDiv">
+                        <h3 class="subtotal">Subtotal: $0</h3>
+                        
+                    <button onclick="orderModal('open')" class="orderBtn">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nerodytiModal orderModal">
+            <div class="orderInfo">
+                <button class="closeOrderBtn" onclick="orderModal('close')"><i class="fas fa-times"></i></button>
+                <!--Add address and shipping method-->
+
+                <form id="form1" >
+                    <label for="fname">Address:</label><br>
+                    <input type="text" id="address" name="fname" placeholder="Your Address..."><br>
+                    <label for="cars">Choose shipping method:</label><br>
+                    <select name="cars" id="shipping" form="carform" aria-placeholder="Shipping method">
+                    <option value="DPD" >DPD</option>
+                    <option value="Omniva">Omniva</option>
+                    <option value="LP Express">LP Express</option>
+                    
+                    </select><br>
+                    <button type="submit" class="submit">Submit</button>
+                  </form>
+
+                  <div class="orderConfirm nerodytiConfirm">
+                    <h2>Order Confirmed</h2>
+                    <img class="confirmImg" src="./images/confirmed.png"/>
+                </div>
+                
+            </div>
+
+            
+           
+        </div>
+        
+    </div>
+
+    
+    
+    <script src="indesx.js"> </script>
+</body>
+</html>
