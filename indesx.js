@@ -446,6 +446,7 @@ function renderCartItems() {
                 <div class="unit-price">
                   <small>$</small>${item.price} / unit
                 </div>
+                <button class="remove-btn-small" onclick="removeItemFromCart(${item.id})">remove</button>
                 <div class="units">
                     <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
                     <div class="number">${item.numberOfUnits}</div>
